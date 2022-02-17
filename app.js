@@ -247,6 +247,12 @@
         document.body.removeChild(tempInput);
     });
 
+    let resetButton = document.querySelector('.reset');
+
+    resetButton.addEventListener('click', () => {
+        window.location.href = '/';
+    });
+
     copyCat('.subscription-amount-input', '.subscription-amount-input-slider-range', 'amount');
     copyCat('.customer-total-input', '.customer-total-input-slider-range', 'customers');
     copyCat('.fixed-fee-input', '.fixed-fee-input-slider-range', 'fixed');
