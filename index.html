@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Payment Processing Fee Calculator</title>
+    <meta name="description" content="Calculate the risk to your business when increasing your prices">
+    <meta property="og:title" content="Price Increase Calculator">
+    <meta property="og:description" content="Calculate the risk to your business when increasing your prices">
+    <meta property="og:image" content="https://res.cloudinary.com/brandymedia/image/upload/v1643880117/price-increase-calculator-banner_t4lpiq.png">
+    <meta property="og:image:secure_url" content="https://res.cloudinary.com/brandymedia/image/upload/v1643880117/price-increase-calculator-banner_t4lpiq.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://priceincrease.brandymedia.co.uk/">
+    <meta name="twitter:card" content="summary_large_image" /> 
+    <meta name="twitter:site" content="@brandymedia" /> 
+    <meta name="twitter:title" content="Calculate the risk to your business when increasing your prices" /> 
+    <meta name="twitter:description" content="Calculate the risk to your business when increasing your prices" /> 
+    <meta name="twitter:image" content="https://res.cloudinary.com/brandymedia/image/upload/v1643880117/price-increase-calculator-banner_t4lpiq.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-100">
+    <header>
+        <div class="py-5 flex w-full justify-center flex-col md:flex-row items-center bg-slate-800 text-emerald-400">
+            <i class="fas fa-credit-card text-3xl md:mr-5"></i> 
+            <h1 class="text-3xl tracking-tight text-center">Payment Processing Fee Calculator</h1>
+        </div>
+    </header>
+    <main>
+        <div class="mt-10 px-3 max-w-xl mx-auto text-center">
+            <h2 class="text-2xl tracking-tight">Calculate your payment processing fees</h2>
+        </div>
+        <div class="bg-white text-slate-900 my-10 md:p-5 max-w-6xl mx-auto text-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 no-print">   
+                <div class="bg-slate-200 p-5">
+                    <div class="bg-slate-50 p-5">
+                        <label for="subscription-amount-input" class="text-lg flex justify-between items-end"><span>Subscription Amount <span class="text-sm">(per customer)</span></span></label>
+                        <div class="mt-1 flex shadow-md">
+                            <span class="inline-flex items-center px-3 rounded-none border border-r-0 border-slate-900 bg-slate-900 text-white">$</span>
+                            <input type="number" name="subscription-amount-input" id="subscription-amount-input" class="ap-input subscription-amount-input flex-1 block w-full sm:text-sm rounded-none border-2 border-slate-900 bg-white" autofocus tabindex="1">
+                            <span class="inline-flex items-center rounded-none border border-l-0 border-slate-900 bg-slate-900 text-white">
+                                <select class="text-slate-900 border-l-0 subscription-amount-period" name="subscription-amount-period" id="subscription-amount-period" tabindex="2">
+                                    <option value="monthly" selected>monthly</option>
+                                    <option value="annually">annually</option>
+                                </select>
+                            </span>
+                        </div>
+                        <div class="annual-turnover-input-slider mt-5 p-1 flex shadow-md border-slate-900 border-2 rounded-full justify-center items-center bg-white">
+                            <div class="subscription-amount-input-slider-step-down">
+                                <button class="annual-turnover-input-slider-button border-slate-900 border-2 rounded-full justify-center items-center h-7 w-7 mr-2 font-bold" tabindex="3">-</button>
+                            </div>
+                            <input type="range" name="subscription-amount-input-slider-range" id="subscription-amount-input-slider-range" class="subscription-amount-input-slider-range flex-grow appearance-none outline-none" min="0" max="1000000" step="10" value="50" tabindex="4">
+                            <div class="subscription-amount-input-slider-step-up">
+                                <button class="annual-turnover-input-slider-button border-slate-900 border-2 rounded-full justify-center items-center h-7 w-7 ml-2 font-bold" tabindex="5">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-200 p-5">
+                    <div class="bg-slate-50 p-5">
+                        <label for="customer-total-input" class="text-lg flex justify-between items-end"><span>Customer Total</span></label>
+                        <div class="mt-1 flex shadow-md">
+                            <span class="inline-flex items-center px-3 rounded-none border border-r-0 border-slate-900 bg-slate-900 text-white"><i class="fas fa-user"></i></span>
+                            <input type="number" name="customer-total-input" id="customer-total-input" class="ap-input customer-total-input flex-1 block w-full sm:text-sm rounded-none border-2 border-slate-900 bg-white" tabindex="6">
+                            <span class="inline-flex items-center px-3 rounded-none border border-l-0 border-slate-900 bg-slate-900 text-white">customers</span>
+                        </div>
+                        <div class="annual-turnover-input-slider mt-5 p-1 flex shadow-md border-slate-900 border-2 rounded-full justify-center items-center bg-white">
+                            <div class="customer-total-input-slider-step-down">
+                                <button class="annual-turnover-input-slider-button border-slate-900 border-2 rounded-full justify-center items-center h-7 w-7 mr-2 font-bold" tabindex="7">-</button>
+                            </div>
+                            <input type="range" name="customer-total-input-slider-range" id="customer-total-input-slider-range" class="customer-total-input-slider-range flex-grow appearance-none outline-none" min="0" max="10000" step="10" value="100" tabindex="8">
+                            <div class="customer-total-input-slider-step-up">
+                                <button class="annual-turnover-input-slider-button border-slate-900 border-2 rounded-full justify-center items-center h-7 w-7 ml-2 font-bold" tabindex="9">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-200 p-5">
+                    <div class="bg-slate-50 p-5">
+                        <label for="fixed-fee-input" class="text-lg flex justify-between items-end"><span>Fixed Fee <span class="text-sm">(per transaction)</span></span></label>
+                        <div class="mt-1 flex shadow-md">
+                            <span class="inline-flex items-center px-3 rounded-none border border-r-0 border-slate-900 bg-slate-900 text-white">$</span>
+                            <input type="number" name="fixed-fee-input" id="fixed-fee-input" class="ap-input fixed-fee-input flex-1 block w-full sm:text-sm rounded-none border-2 border-slate-900 bg-white" autofocus tabindex="10">
+                        </div>
+                        <div class="annual-turnover-input-slider mt-5 p-1 flex shadow-md border-slate-900 border-2 rounded-full justify-center items-center bg-white">
+                            <div class="fixed-fee-input-slider-step-down">
+                                <button class="annual-turnover-input-slider-button border-slate-900 border-2 rounded-full justify-center items-center h-7 w-7 mr-2 font-bold" tabindex="11">-</button>
+                            </div>
+                            <input type="range" name="fixed-fee-input-slider-range" id="fixed-fee-input-slider-range" class="fixed-fee-input-slider-range flex-grow appearance-none outline-none" min="0" max="100" step="0.25" value="0.5" tabindex="12">
+                            <div class="fixed-fee-input-slider-step-up">
+                                <button class="annual-turnover-input-slider-button border-slate-900 border-2 rounded-full justify-center items-center h-7 w-7 ml-2 font-bold" tabindex="13">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-200 p-5">
+                    <div class="bg-slate-50 p-5">
+                        <label for="percent-fee-input" class="text-lg flex justify-between items-end"><span>Percentage Fee <span class="text-sm">(per transaction)</span></span></label>
+                        <div class="mt-1 flex shadow-md">
+                            <input type="number" name="percent-fee-input" id="percent-fee-input" class="ap-input percent-fee-input flex-1 block w-full sm:text-sm rounded-none border-2 border-slate-900 bg-white" autofocus tabindex="14">
+                            <span class="inline-flex items-center px-3 rounded-none border border-l-0 border-slate-900 bg-slate-900 text-white">%</span>
+                        </div>
+                        <div class="annual-turnover-input-slider mt-5 p-1 flex shadow-md border-slate-900 border-2 rounded-full justify-center items-center bg-white">
+                            <div class="percent-fee-input-slider-step-down">
+                                <button class="annual-turnover-input-slider-button border-slate-900 border-2 rounded-full justify-center items-center h-7 w-7 mr-2 font-bold" tabindex="15">-</button>
+                            </div>
+                            <input type="range" name="percent-fee-input-slider-range" id="percent-fee-input-slider-range" class="percent-fee-input-slider-range flex-grow appearance-none outline-none" min="0" max="100" step="0.25" value="5" tabindex="16">
+                            <div class="percent-fee-input-slider-step-up">
+                                <button class="annual-turnover-input-slider-button border-slate-900 border-2 rounded-full justify-center items-center h-7 w-7 ml-2 font-bold" tabindex="17">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="results my-10">
+                <div class="results-text"></div>
+                <div class="mb-5 md:mb-0 mt-10 no-print">
+                    <button class="print p-4 bg-emerald-400 hover:bg-emerald-500 text-gray-800" tabindex="19"><i class="fas fa-print"></i> Print</button>
+                    <button class="share p-4 bg-emerald-400 hover:bg-emerald-500 text-gray-800" tabindex="20"><i class="fas fa-share"></i> Share</button>
+                    <button class="email p-4 bg-emerald-400 hover:bg-emerald-500 text-gray-800" tabindex="21"><i class="fas fa-envelope"></i> Email</button>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-900 py-24 px-3 text-center">
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg text-white tracking-wider">Don't miss out - <br class="inline md:hidden"/> Enter your email below to receive updates on all of our latest products & services.</p>
+            </div>
+            <div class="mt-10 text-gray-900 flex justify-center">
+                <form action="https://brandymedia.us2.list-manage.com/subscribe/post?u=5fafc743c1e518a9b5f418557&amp;id=a08b8a2f96" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate flex flex-col md:flex-col justify-center items-center	w-full sm:w-2/3" target="_blank" novalidate>  
+                    <div class="w-full mb-5">
+                        <input type="email" value="" name="EMAIL" class="p-4 w-full border-2 border-gray-900 rounded-none focus:outline-none focus:border-gray-900 placeholder-gray-900" id="mce-EMAIL" placeholder="Email Address" tabindex="22">
+                    </div>
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5fafc743c1e518a9b5f418557_a08b8a2f96" value=""></div>
+                    <div class="w-full">
+                        <input type="submit" value="Subscribe" name="subscribe" class="p-4 bg-emerald-400 hover:bg-emerald-500 text-gray-900 uppercase tracking-wider rounded-none w-full cursor-pointer" tabindex="23">
+                    </div>
+                    <div>
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>                
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="py-10 text-center flex flex-col justify-center bg-slate-100">
+            <div class="mb-5">
+                <p class="text-sm">Powered by <a href="https://brandymedia.co.uk/" target="_blank" rel="noreferrer" tabindex="24">Brandy Media</a></p>
+            </div>
+            <div>
+                <a href="https://brandymedia.co.uk/" target="_blank" rel="noreferrer">
+                    <img class="logo inline" src="./images/Brandy Media logo.svg" alt="Brandy Media Logo">
+                </a>
+            </div>
+        </div>
+        <div class="text-center py-10">
+            <div class="copyright"></div>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
